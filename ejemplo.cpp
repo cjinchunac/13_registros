@@ -50,5 +50,11 @@ int main ( ) {
         }
     }
     cout<<"El empleado con mayor ventas en el año fue: "<<empleados[imayor].nom<<" y su numero es "<<empleados[imayor].num<<endl;
+    for (int i=0;i<=n-1;i++) {
+        if (empleados[i].vt>100) {
+            empleados[i].sal=empleados[i].sal*1.10;
+            cout<<"El empleado "<<empleados[i].nom<<" por vender mas de 100 unidades tiene ahora salario de: "<<empleados[i].sal<<endl;
+        }
+    }
     return 0;
 }
