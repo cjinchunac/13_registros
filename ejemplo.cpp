@@ -9,7 +9,7 @@ struct EMP {
     double vt;
 };
 int main ( ) {
-    int n;
+    int n, mayor, imayor;
     EMP empleados [100];
     cout<<"Ingrese el numero de empleados"<<endl;
     cin>>n;
@@ -40,6 +40,15 @@ int main ( ) {
         }
         cout<<endl<<"venta total: "<<empleados[i].vt<<endl;
         cout<<"salario: "<<empleados[i].sal<<endl<<endl;
-    } 
+    }
+    mayor=empleados[0].vt;
+    imayor=0;
+    for (int i=1;i<=n-1;i++) {
+        if (empleados[i].vt>mayor) {
+            mayor=empleados[i].vt;
+            imayor=i;    
+        }
+    }
+    cout<<"El empleado con mayor ventas en el año fue: "<<empleados[imayor].nom<<" y su numero es "<<empleados[imayor].num<<endl;
     return 0;
 }
