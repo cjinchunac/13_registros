@@ -49,12 +49,19 @@ int main ( ) {
             imayor=i;    
         }
     }
-    cout<<"El empleado con mayor ventas en el año fue: "<<empleados[imayor].nom<<" y su numero es "<<empleados[imayor].num<<endl;
+    cout<<"El empleado con mayor ventas en el año fue: "<<empleados[imayor].nom<<" y su numero es "<<empleados[imayor].num<<endl<<endl;
     for (int i=0;i<=n-1;i++) {
         if (empleados[i].vt>100) {
             empleados[i].sal=empleados[i].sal*1.10;
-            cout<<"El empleado "<<empleados[i].nom<<" por vender mas de 100 unidades tiene ahora salario de: "<<empleados[i].sal<<endl;
+            cout<<"El empleado "<<empleados[i].nom<<" por vender mas de 100 unidades durante el año tiene ahora salario de: "<<empleados[i].sal<<endl;
         }
     }
+    cout<<endl;
+    for (int i=0;i<=n-1;i++) {
+        if (empleados[i].ven[11]<30) {
+            cout<<"El empleado "<<empleados[i].nom<<" ha tenido ventas inferiores a 30 unidades en el mes de diciembre y su numero es "<<empleados[i].num<<endl;
+        }
+    }
+    cout<<endl;
     return 0;
 }
