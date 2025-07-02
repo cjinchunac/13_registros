@@ -18,6 +18,8 @@ void leerCorreo(correo &, string, string);
 void leerContacto(contactoEmail &, string, char, int, correo);
 void imprimeContacto(contactoEmail &);
 void borrarContacto(contactoEmail lista[], int &n);
+void mostrarPorDominio(contactoEmail lista[], int n);
+void buscarPorEmail(contactoEmail lista[], int n);
 
 int main(){
     int n, op;
@@ -34,6 +36,7 @@ int main(){
         cout<<"2. Mostrar contactos"<<endl;
         cout<<"3. Modificar contactos"<<endl;
         cout<<"4. Borrar contacto"<<endl;
+        cout<<"5. Mostrar contactos por dominio de correo"<<endl;
         cout<<"0. Salir"<<endl;
         cout<<"Elige una opcion: "; cin>>op;
         switch(op){
@@ -90,6 +93,14 @@ int main(){
                     cout << "No hay contactos para borrar." << endl;
                 } else {
                     borrarContacto(lista, n);
+                }
+                system("pause");
+                break;
+            case 5:
+                if(n == 0) {
+                    cout << "\nNo hay contactos registrados." << endl;
+                } else {
+                    mostrarPorDominio(lista, n);
                 }
                 system("pause");
                 break;
@@ -159,5 +170,29 @@ void borrarContacto(contactoEmail lista[], int &n) {
     } 
     else {
         cout << "Indice no valido!" << endl;
+    }
+}
+
+void mostrarPorDominio(contactoEmail lista[], int n) {
+    string dominio;
+    int contador = 0;
+    
+    cout << "\n--- CONTACTOS POR DOMINIO ---" << endl;
+    cout << "Ingrese el dominio a buscar (ej: gmail.com): ";
+    cin >> dominio;
+    
+    cout << "\nContactos con dominio @" << dominio << ":" << endl;
+    for(int i = 0; i < n; i++) {
+        if(lista[i].email.domain == dominio) {
+            cout << "\nContacto #" << i << endl;
+            imprimeContacto(lista[i]);
+            contador++;
+        }
+    }
+    
+    if(contador == 0) {
+        cout << "\nNo se encontraron contactos con ese dominio." << endl;
+    } else {
+        cout << "\nTotal encontrados: " << contador << endl;
     }
 }
