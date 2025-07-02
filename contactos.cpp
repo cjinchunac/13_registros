@@ -37,6 +37,7 @@ int main(){
         cout<<"3. Modificar contactos"<<endl;
         cout<<"4. Borrar contacto"<<endl;
         cout<<"5. Mostrar contactos por dominio de correo"<<endl;
+        cout<<"6. Buscar un contacto por email"<<endl;
         cout<<"0. Salir"<<endl;
         cout<<"Elige una opcion: "; cin>>op;
         switch(op){
@@ -91,7 +92,8 @@ int main(){
             case 4:
                 if(n == 0) {
                     cout << "No hay contactos para borrar." << endl;
-                } else {
+                } 
+                else {
                     borrarContacto(lista, n);
                 }
                 system("pause");
@@ -101,6 +103,15 @@ int main(){
                     cout << "\nNo hay contactos registrados." << endl;
                 } else {
                     mostrarPorDominio(lista, n);
+                }
+                system("pause");
+                break;
+            case 6:
+                if(n == 0) {
+                    cout << "\nNo hay contactos registrados." << endl;
+                } 
+                else {
+                    buscarPorEmail(lista, n);
                 }
                 system("pause");
                 break;
@@ -196,3 +207,28 @@ void mostrarPorDominio(contactoEmail lista[], int n) {
         cout << "\nTotal encontrados: " << contador << endl;
     }
 }
+
+void buscarPorEmail(contactoEmail lista[], int n) {
+    string usuario, dominio;
+    int encontrado = -1;
+    
+    cout << "\n--- BUSCAR CONTACTO POR EMAIL ---" << endl;
+    cout << "Ingrese el email completo (usuario@dominio):" << endl;
+    cout << "Usuario: "; cin >> usuario;
+    cout << "Dominio: "; cin >> dominio;
+    
+    for(int i = 0; i < n; i++) {
+        if(lista[i].email.user == usuario && lista[i].email.domain == dominio) {
+            encontrado = i;
+            break;
+        }
+    }
+    
+    if(encontrado != -1) {
+        cout << "\nContacto encontrado en la posicion #" << encontrado << endl;
+        imprimeContacto(lista[encontrado]);
+    } else {
+        cout << "\nNo se encontro ningun contacto con ese email." << endl;
+    }
+}
+        
