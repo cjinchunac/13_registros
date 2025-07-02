@@ -16,11 +16,8 @@ struct contactoEmail{
     correo email;
 };
 
-void modificaContacto(contactoEmail &);
 void leerCorreo(correo &, string, string);
 void leerContacto(contactoEmail &, string, char, int, correo);
 void imprimeContacto(contactoEmail &);
-void imprimeContacto(contactoEmail &);
-void borrarContacto(contactoEmail lista[], int &n);
 
 #endif

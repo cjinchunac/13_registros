@@ -1,6 +1,7 @@
 #include <iostream>
+#include <cstdlib>
 #include "contacto.h"
-#include "busquedas.h"
+#include "operaciones.h"
 #define MAX 10
 using namespace std;
 
