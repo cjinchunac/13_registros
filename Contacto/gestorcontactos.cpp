@@ -1,4 +1,4 @@
-#include "operaciones.h"
+#include "gestorcontactos.h"
 #include "contacto.h"
 #include <iostream>
 #include <string>

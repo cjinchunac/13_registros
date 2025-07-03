@@ -1,5 +1,5 @@
-#ifndef OPERACIONES_H
-#define OPERACIONES_H
+#ifndef GESTORCONTACTOS_H
+#define GESTORCONTACTOS_H
 
 #include "contacto.h"
 

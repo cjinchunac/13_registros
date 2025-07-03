@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "contacto.h"
-#include "operaciones.h"
+#include "gestorcontactos.h"
 #define MAX 10
 using namespace std;
 
@@ -100,7 +100,7 @@ int main(){
                 system("pause");
                 break;
             case 0:
-                cout<<"Esta seguro de salir? (S/N): ";
+                cout<<"¡Hasta una proxima oportunidad!";
                 break;
             default:
                 cout<<"Opcion no valida!"<<endl;
